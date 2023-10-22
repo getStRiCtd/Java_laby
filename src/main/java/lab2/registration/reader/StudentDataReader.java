@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import lab2.registration.model.Student;
+import lab2.registration.model.StudentCategory;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class StudentDataReader {
         for (Student s : students)
         {
             student_map.put(s.getId(), s);
+            s.setCategory(StudentCategory.BACHELOR);
         }
         return student_map;
     }
@@ -46,6 +48,7 @@ public class StudentDataReader {
         for (Student s : students)
         {
             student_map.put(s.getId(), s);
+            s.setCategory(StudentCategory.MASTER);
         }
         return student_map;
     }

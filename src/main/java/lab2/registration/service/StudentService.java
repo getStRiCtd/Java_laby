@@ -2,6 +2,9 @@ package lab2.registration.service;
 
 import lab2.registration.model.ActionStatus;
 import lab2.registration.model.CourseInstance;
+import lab2.registration.exceptions.NoStudent;
+
+import java.util.List;
 /**
  * Интерфейс сервиса для студентов
  */
@@ -18,7 +21,7 @@ public interface StudentService {
      * @param courseId идентификатор курса, соответствующий CourseInstance.id
      * @return результат выполнения регистрации
      */
-    ActionStatus subscribe(long studentId, long courseId);
+    ActionStatus subscribe(int studentId, int courseId);
 
     /**
      * Отмена регистрации студента на курс, которая возможна только в том случае, когда
@@ -28,12 +31,12 @@ public interface StudentService {
      * @param courseId идентификатор курса, соответствующий CourseInstance.id
      * @return результат выполнения отмены регистрации
      */
-    ActionStatus unsubscribe(long studentId, long courseId);
+    ActionStatus unsubscribe(int studentId, int courseId);
 
     /**
      * @param studentId идентификатор студента
      * @return список всех курсов, на которые записан студент
      */
-    CourseInstance[] findAllSubscriptionsByStudentId(long studentId);
+    List<CourseInstance> findAllSubscriptionsByStudentId(int studentId) throws NoStudent;
     
 }

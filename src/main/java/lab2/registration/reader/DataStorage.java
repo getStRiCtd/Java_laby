@@ -8,8 +8,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public class DataStorage {
-    public Map<Integer, Student> students_bachelor;
-    public Map<Integer, Student> students_master;
+    public Map<Integer, Student> students;
     public Map<Integer, CourseInfo> courseInfos;
     public Map<Integer, CourseInstance> courseInstances;
 
@@ -17,8 +16,13 @@ public class DataStorage {
         StudentDataReader studentDataReader = new StudentDataReader();
         CourseDataReader courseDataReader = new CourseDataReader();
         try {
-            this.students_bachelor = studentDataReader.readBachelorStudentData();
-            this.students_master = studentDataReader.readMasterStudentData();
+            //Students info
+            Map<Integer, Student> students_bachelor = studentDataReader.readBachelorStudentData();
+            Map<Integer, Student> students_master = studentDataReader.readMasterStudentData();
+            this.students.putAll(students_bachelor);
+            this.students.putAll(students_master);
+
+            // CoursersInfo
             this.courseInfos = courseDataReader.readCourseInfo();
             this.courseInstances = courseDataReader.readCourseInstance();
 
