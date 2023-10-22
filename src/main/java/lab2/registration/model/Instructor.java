@@ -8,8 +8,10 @@ public class Instructor extends Person {
     /**
      * Идентификаторы курсов, которые может вести преподаватель
      */
-    int[] canTeach;
+    private int[] canTeach;
 
-    // TODO: добавить геттеры и сеттеры
+    public int[] getCanTeach(){return canTeach;};
+    public void setCanTeach(int[] canTeach){this.canTeach = canTeach;};
+
     
 }
