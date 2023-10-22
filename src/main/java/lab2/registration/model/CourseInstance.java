@@ -32,17 +32,17 @@ public class CourseInstance {
      */
     private int capacity;
 
-    public int getId() {return id;};
-    public void setId(int id) {this.id= id;};
+    public int getId() {return id;}
+    public void setId(int id) {this.id= id;}
 
-    public long getCourseId(){return courseId;};
-    public void setCourseId(long courseId) {this.courseId = courseId;};
+    public long getCourseId(){return courseId;}
+    public void setCourseId(long courseId) {this.courseId = courseId;}
 
-    public long getInstructorId(){return instructorId;};
-    public void setInstructorId(long instructorId){this.instructorId = instructorId;};
+    public long getInstructorId(){return instructorId;}
+    public void setInstructorId(long instructorId){this.instructorId = instructorId;}
 
-    public LocalDate getStartDate(){return startDate;};
-    public void setStartDate(LocalDate startDate) {this.startDate = startDate;};
+    public LocalDate getStartDate(){return startDate;}
+    public void setStartDate(LocalDate startDate) {this.startDate = startDate;}
 
     public int getCapacity() {
         return capacity;

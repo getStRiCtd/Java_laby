@@ -1,10 +1,8 @@
 package lab2.registration.reader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lab2.registration.model.CourseInfo;
 import lab2.registration.model.CourseInstance;
-import lab2.registration.model.Student;
 
 
 import java.io.File;
@@ -19,7 +17,7 @@ public class CourseDataReader {
     public Map<Integer, CourseInfo> readCourseInfo() throws IOException {
         CourseInfo[] students = objectMapper
                 .readValue(new File("src/main/resources/courseInfos.json"), CourseInfo[].class);
-        Map<Integer, CourseInfo> courseInfoMap = new HashMap<Integer, CourseInfo>();
+        Map<Integer, CourseInfo> courseInfoMap = new HashMap<>();
         for (CourseInfo cs : students) {
             courseInfoMap.put(cs.getId(), cs);
         }
@@ -28,7 +26,7 @@ public class CourseDataReader {
     public Map<Integer, CourseInstance> readCourseInstance() throws IOException {
         CourseInstance[] students = objectMapper
                 .readValue(new File("src/main/resources/courseInstances.json"), CourseInstance[].class);
-        Map<Integer, CourseInstance> courseInfoMap = new HashMap<Integer, CourseInstance>();
+        Map<Integer, CourseInstance> courseInfoMap = new HashMap<>();
         for (CourseInstance cs : students) {
             courseInfoMap.put(cs.getId(), cs);
         }
