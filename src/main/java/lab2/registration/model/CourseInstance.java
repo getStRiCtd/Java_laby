@@ -43,5 +43,12 @@ public class CourseInstance {
 
     public LocalDate getStartDate(){return startDate;};
     public void setStartDate(LocalDate startDate) {this.startDate = startDate;};
-    
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 }
