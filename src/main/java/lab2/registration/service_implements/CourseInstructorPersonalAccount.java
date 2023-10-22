@@ -23,7 +23,7 @@ public class CourseInstructorPersonalAccount implements CourseInstructorService 
         if (dataStorage.courseInfos.get(courseId).getStudents() == null)
             throw new NoStudent("На курс не записано ни одного студента");
         return dataStorage.courseInfos.get(courseId).getStudents();
-    };
+    }
 
     public List<Student> findStudentsByInstructorId(int instructorId) throws NoInstructor, NoCourse {
         if(!dataStorage.instructors.containsKey(instructorId))
@@ -35,7 +35,7 @@ public class CourseInstructorPersonalAccount implements CourseInstructorService 
         for (CourseInfo course : dataStorage.instructors.get(instructorId).getCanTeach()){
             try {
                 studentsByInstructorsId.addAll(this.findStudentsByCourseId(course.getId()));
-            } catch (NoStudent ignored) {};
+            } catch (NoStudent ignored) {}
         }
         return studentsByInstructorsId;
     }

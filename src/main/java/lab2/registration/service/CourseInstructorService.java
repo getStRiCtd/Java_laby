@@ -4,7 +4,6 @@ import lab2.registration.exceptions.NoCourse;
 import lab2.registration.exceptions.NoInstructor;
 import lab2.registration.exceptions.NoStudent;
 import lab2.registration.model.Instructor;
-import lab2.registration.model.ActionStatus;
 import lab2.registration.model.Student;
 
 import java.util.List;
