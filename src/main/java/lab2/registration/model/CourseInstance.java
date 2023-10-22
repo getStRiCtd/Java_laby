@@ -10,7 +10,7 @@ public class CourseInstance {
     /**
      * идентификатор проведения курса
      */
-    private long id;
+    private int id;
 
     /**
      * идентификатор курса, соответствующий CourseInfo.id
@@ -32,8 +32,8 @@ public class CourseInstance {
      */
     private int capacity;
 
-    public long getId() {return id;};
-    public void setId(long id) {this.id= id;};
+    public int getId() {return id;};
+    public void setId(int id) {this.id= id;};
 
     public long getCourseId(){return courseId;};
     public void setCourseId(long courseId) {this.courseId = courseId;};

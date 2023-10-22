@@ -8,7 +8,7 @@ public class Person {
     /**
      * идентификатор человека
      */
-    protected long id;
+    protected int id;
 
     /**
      * ФИО человека
@@ -17,10 +17,10 @@ public class Person {
 
     // геттеры и сеттеры
     
-    public long getId() {
+    public int getId() {
         return this.id;
     }
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

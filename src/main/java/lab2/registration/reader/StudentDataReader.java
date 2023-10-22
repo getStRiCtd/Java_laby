@@ -28,14 +28,26 @@ public class StudentDataReader {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
 
-    public Student[] readBachelorStudentData() throws IOException {
-        return objectMapper
+    public Map<Integer, Student> readBachelorStudentData() throws IOException {
+        Student[] students  = objectMapper
                 .readValue(new File("src/main/resources/bachelorStudents.json"), Student[].class);
+        Map<Integer, Student> student_map = new HashMap<Integer, Student>();
+        for (Student s : students)
+        {
+            student_map.put(s.getId(), s);
+        }
+        return student_map;
     }
 
-    public Student[] readMasterStudentData() throws IOException {
-        return objectMapper
+    public Map<Integer, Student> readMasterStudentData() throws IOException {
+        Student[] students  = objectMapper
                 .readValue(new File("src/main/resources/masterStudents.json"), Student[].class);
+        Map<Integer, Student> student_map = new HashMap<Integer, Student>();
+        for (Student s : students)
+        {
+            student_map.put(s.getId(), s);
+        }
+        return student_map;
     }
 
 }

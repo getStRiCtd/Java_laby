@@ -8,7 +8,7 @@ public class CourseInfo {
     /**
      * идентификатор курса
      */
-    private long id;
+    private int id;
     private String name;
 
     /**
@@ -26,10 +26,10 @@ public class CourseInfo {
      */
     private StudentCategory[] studentCategories;
 
-    public long getId(){
+    public int getId(){
         return id;
     }
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
