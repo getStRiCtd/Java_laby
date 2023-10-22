@@ -1,4 +1,6 @@
 package lab2.registration.model;
+import lab2.registration.exceptions.NoStudent;
+
 import java.util.List;
 /**
  * Класс для базовой информации о курсе
@@ -20,6 +22,7 @@ public class CourseInfo {
      * Список идентификаторов курсов, которые нужно обязательно пройти до начала данного курса
      */
     private List<Integer> prerequisites;
+    private List<Student> students;
 
     /**
      * список категорий студентов, которые могут посещать курс
@@ -60,4 +63,21 @@ public class CourseInfo {
         this.studentCategories = studentCategories;
     }
 
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    public void addStudents(Student student) {
+        this.students.add(student);
+    }
+
+    public void removeStudents(int studentId) throws NoStudent {
+        if (!students.contains(studentId))
+            throw new NoStudent("Студент не записан на курс");
+        students.remove(students.indexOf(studentId));
+    }
 }
