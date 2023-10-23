@@ -76,8 +76,9 @@ public class CourseInfo {
     }
 
     public void removeStudents(int studentId) throws NoStudent {
-        if (!students.contains(studentId))
-            throw new NoStudent("Студент не записан на курс");
-        students.remove(students.indexOf(studentId));
+//        if (!students.contains())
+//            throw new NoStudent("Студент не записан на курс");
+//        TODO:Обработать исключения
+        students.removeIf(student -> student.getId() == studentId);
     }
 }
